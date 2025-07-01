@@ -1,0 +1,11 @@
+<div class="search-container"> 
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher un hôtel par nom ou ville..." /> 
+</div>
+<div class="hotel-grid">
+     <div class="hotel-card" *ngFor="let hotel of filteredHotels"> 
+        <img [src]="hotel.image" alt="{{ hotel.name }}" />
+       
+         <h3>{{ hotel.name }}</h3> <p>Ville : {{ hotel.location }}</p> 
+         <p>Prix par nuit : <strong>{{ hotel.price }} €</strong></p>
+          <button (click)="reserveNow(hotel.name)">Réserver maintenant</button> 
+        </div> </div>

@@ -1,0 +1,34 @@
+<!-- reservation.component.html -->
+
+<div class="paiement-container"></div>
+<div class="logo-container">
+    <img src="./assets/logo.jpg" alt="Paiement Logo" class="logo-paiement" />
+  </div>
+<form (ngSubmit)="reserver()">
+    <h2>Faire une réservation</h2> 
+  <label>Ville</label>
+  <select [(ngModel)]="reservation.ville" name="ville" required>
+    <option *ngFor="let ville of villes" [value]="ville">{{ ville }}</option>
+  </select>
+
+  <label>Hôtel</label>
+  <select [(ngModel)]="reservation.hotel" name="hotel" required>
+    <option *ngFor="let hotel of hotels" [value]="hotel">{{ hotel }}</option>
+  </select>
+
+  <label>Chambre</label>
+  <select [(ngModel)]="reservation.chambre" name="chambre" required>
+    <option *ngFor="let chambre of chambres" [value]="chambre">{{ chambre }}</option>
+  </select>
+
+  <label>Date début</label>
+  <input type="date" [(ngModel)]="reservation.dateDebut" name="dateDebut" required />
+
+  <label>Date fin</label>
+  <input type="date" [(ngModel)]="reservation.dateFin" name="dateFin" required />
+
+  <label>Nombre de personnes</label>
+  <input type="number" [(ngModel)]="reservation.personnes" name="personnes" min="1" required />
+
+  <button type="submit">Réserver</button>
+</form>

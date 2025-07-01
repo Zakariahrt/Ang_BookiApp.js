@@ -1,0 +1,39 @@
+<div class="paiement-container">
+    <!-- Logo de paiement en haut -->
+    <div class="logo-container">
+      <img src="./assets/carte.avif" alt="Paiement Logo" class="logo-paiement" />
+    </div>
+  
+    <form (ngSubmit)="payer()">
+      <h2>Choisissez votre mode de paiement</h2>
+  
+      <label>
+        <input type="radio" name="mode" [(ngModel)]="modePaiement" value="carte" />
+        Carte Bancaire
+      </label>
+  
+      <label>
+        <input type="radio" name="mode" [(ngModel)]="modePaiement" value="especes" />
+        Espèces
+      </label>
+  
+      <label>
+        <input type="radio" name="mode" [(ngModel)]="modePaiement" value="cheque" />
+        Chèque
+      </label>
+  
+      <div *ngIf="modePaiement === 'carte'" class="carte-form">
+        <label>Numéro de carte</label>
+        <input type="text" [(ngModel)]="paiement.numeroCarte" name="numeroCarte" maxlength="16" />
+  
+        <label>Date d'expiration</label>
+        <input type="month" [(ngModel)]="paiement.dateExpiration" name="dateExpiration" />
+  
+        <label>CVV</label>
+        <input type="text" [(ngModel)]="paiement.cvv" name="cvv" maxlength="3" />
+      </div>
+  
+      <button type="submit">Payer</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,27 @@
+<div id="app">
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img src="./assets/logo.jpg" alt="Logo" />
+          <a href="/home"><span>Hotel Booking</span></a>
+        </div>
+        <nav class="nav-links">
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+          
+          <a routerLink="/login" routerLinkActive="active">login</a>
+          <a routerLink="/register" routerLinkActive="active">Sign up</a>
+        </nav>
+      </div>
+    </header>
+  
+    <main class="container">
+      <router-outlet></router-outlet>
+    </main>
+  
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Hotel Booking. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </div>
+  

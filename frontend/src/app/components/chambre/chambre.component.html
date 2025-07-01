@@ -1,0 +1,18 @@
+<h2>Ajouter une chambre</h2> <form (ngSubmit)="ajouterChambre()" class="form"> <label for="numero">Numéro :</label> <input type="text" id="numero" [(ngModel)]="chambre.numero" name="numero" required />
+    <label for="type">Type :</label>
+    <select id="type" [(ngModel)]="chambre.type" name="type" required>
+    <option *ngFor="let type of typesChambre" [value]="type">{{ type }}</option>
+    </select>
+    
+    <label for="etat">État :</label>
+    <select id="etat" [(ngModel)]="chambre.etat" name="etat">
+    <option value="Libre">Libre</option>
+    <option value="Occupée">Occupée</option>
+    </select>
+    
+    <label for="prix">Prix :</label>
+    <input type="number" id="prix" [(ngModel)]="chambre.prix" name="prix" required />
+    
+    <button type="submit">Ajouter Chambre</button>
+    
+    </form> <h3>Liste des chambres</h3> <table> <thead> <tr> <th>Numéro</th> <th>Type</th> <th>État</th> <th>Prix</th> </tr> </thead> <tbody> <tr *ngFor="let c of chambres"> <td>{{ c.numero }}</td> <td>{{ c.type }}</td> <td>{{ c.etat }}</td> <td>{{ c.prix | currency:'EUR' }}</td> </tr> </tbody> </table>
